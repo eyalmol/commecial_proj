@@ -11,6 +11,7 @@ app.use(express.static("public"));
 app.use(express.json());
 //set the app to use the bot1,bot2,bot3 files(will hold our operations)
 app.use("/commercial", require("./routes/commercial"));
+app.use("/commercial/timing", require("./routes/timing"));
 //handle the errors that occurred during the operations
 app.use(function (err, req, res, next) {
   res.status(422).send({ error: err.message });

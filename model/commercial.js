@@ -17,5 +17,5 @@ const commercialSchema = new Schema({
   },
 });
 
-const Bot1 = mongoose.model("commercial", commercialSchema);
-module.exports = Bot1;
+const Commercial = mongoose.model("commercial", commercialSchema);
+module.exports = Commercial;
