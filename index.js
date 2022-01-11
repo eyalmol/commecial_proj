@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 //set up our express app
 const app = express();
 //connect to mongoDB
@@ -9,6 +10,8 @@ mongoose.Promise = global.Promise;
 app.use(express.static("public"));
 //parse the data to json file
 app.use(express.json());
+//use cors so that we can run the server and the client side from two diffrent locations
+app.use(cors());
 //set the app to use the bot1,bot2,bot3 files(will hold our operations)
 app.use("/commercial", require("./routes/commercial"));
 app.use("/commercial/timing", require("./routes/timing"));
